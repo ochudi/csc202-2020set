@@ -1,0 +1,24 @@
+#containerized o/s
+version: '3'
+services:
+  database:
+    container_name: postgres-csc2020
+    image: postgres:latest
+    ports:
+      - "5433:5432"
+    volumes:
+      - c:/Users/Chudi/data/postgres/csc2020:/data/postgres
+    env_file:
+      - csc2020.env
+
+  web:
+
+    container_name: nginx-csc2020
+    build:
+      context: .
+      dockerfile: nginx-primer/Dockerfile
+    ports:
+      - 80:80 #exposing port 80 on our local system
+      - 443:443
+    extra_hosts:
+      - "app-server: 172.20.10.2" #ip of your local system where ... is running; IP alias
