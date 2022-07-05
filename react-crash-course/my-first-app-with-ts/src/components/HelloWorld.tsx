@@ -1,5 +1,4 @@
 import React from 'react';
-
 const HelloWorld: React.FC = () => {
     return (
         <div>
@@ -7,5 +6,4 @@ const HelloWorld: React.FC = () => {
         </div>
     )
 }
-
 export default HelloWorld;

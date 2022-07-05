@@ -1,5 +1,4 @@
 import React from 'react';
-
 const HelloWorld = () => {
     return (
         <div>
@@ -7,5 +6,4 @@ const HelloWorld = () => {
         </div>
     )
 }
-
 export default HelloWorld;

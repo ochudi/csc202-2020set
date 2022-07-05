@@ -1,12 +1,10 @@
 import React from 'react';
-
 const ShowUser = (props) => {
     const showUser = () => {
         const user = props.user;
-        try{
-            if(user.id !== undefined){
-                // make user that user object is trully available
-                return(
+        try {
+            if (user.id !== undefined) {//make user that user object is trully available
+                return (
                     <table>
                         <th>Property</th>
                         <th>Value</th>
@@ -43,12 +41,11 @@ const ShowUser = (props) => {
                             <td>{user.company.name}</td>
                         </tr>
                     </table>
-                    )
-            }
-            else{
+                )
+            } else {
                 return 'No user to display'; //user is null or elements are undefined
             }
-        } catch(error){
+        } catch (error) {
             return `Problem fetching user ${error.message}`;
         }
     }
@@ -58,5 +55,4 @@ const ShowUser = (props) => {
         </div>
     )
 }
-
 export default ShowUser;

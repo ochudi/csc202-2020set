@@ -1,15 +1,14 @@
 import React from 'react';
-import {User} from './type-defs'
-
+import { User } from './type-defs'
 type Props = {
     user: User;
 }
 const ShowUser: React.FC<Props> = (props) => {
     const showUser = () => {
         const user = props.user;
-        try{
-            if(user.id !== undefined){  //make user that user object is trully available
-                return(
+        try {
+            if (user.id !== undefined) {//make user that user object is trully available
+                return (
                     <table>
                         <th>Property</th>
                         <th>Value</th>
@@ -47,19 +46,17 @@ const ShowUser: React.FC<Props> = (props) => {
                         </tr>
                     </table>
                 )
-            } else{
+            } else {
                 return 'No user to display'; //user is null or elements are undefined
             }
-        } catch(error) {
+        } catch (error) {
             return `Problem fetching user ${error}`;
         }
     }
-
     return (
         <div>
             {showUser()}
         </div>
     )
 }
-
 export default ShowUser;

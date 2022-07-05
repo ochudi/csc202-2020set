@@ -1,9 +1,8 @@
 import React from 'react';
 import './App.css';
-import ContinuousAssessment2 from './components/CA2/ContinuousAssessment2'
-import CreateUser from './components/CA2/CreateUser'
+import HelloWorld4 from './components/HelloWorld4';
+import HelloWorld7 from './components/helloworld7/HelloWorld7';
 import HelloWorld8 from './components/HelloWorld8';
-
 const App: React.FC = () => {
   return (
     <div className="Container">
@@ -11,13 +10,12 @@ const App: React.FC = () => {
         <HelloWorld8 />
       </div>
       <div className="Column2">
-        <ContinuousAssessment2 />
+        <HelloWorld4 />
       </div>
       <div className="Column3">
-        <CreateUser />
+        <HelloWorld7 />
       </div>
     </div>
-    );
+  );
 }
-
 export default App;

@@ -1,7 +1,6 @@
 /** Here we illustrate useEffect for fetching remote data */
-import React, {useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ShowUser from './ShowUser';
-
 const HelloWorld7 = (props) => {
     //const [state, setState] = useState(initialState);
     const [user, setUser] = useState(null);
@@ -13,7 +12,7 @@ const HelloWorld7 = (props) => {
             let data = await response.json()
             setUser(data);
         } catch (error) {
-        setUser(null);
+            setUser(null);
         }
     };
     const fetchData = async () => {
@@ -28,36 +27,35 @@ const HelloWorld7 = (props) => {
     useEffect(() => {
         fetchData();
         userIdInput.current.focus(); //focus on the referenced input field after fetching initial data
-        }, []);
-        //prepare conditional showing of user
-        const showUser = () => {
-            if (user!==null){
-                return <ShowUser user={user} />
-            }
-            else {
-                return 'No user to display';
-            }
+    }, []);
+    //prepare conditional showing of user
+    const showUser = () => {
+        if (user !== null) {
+            return <ShowUser user={user} />
         }
-        return (
-            <div>
-                <p>Hello {props.name}. Greetings from React.</p>
-                <p>
-                    <input ref={userIdInput} type="number" placeholder="UserId (1 to 10) here" />
-                </p>
-                <p>
-                    <button onClick={refetchData}>
-                        Fetch User
-                    </button>
-                </p>
-                <p>
-                    {showUser()}
-                </p>
-            </div>
-        )
+        else {
+            return 'No user to display';
+        }
+    }
+    return (
+        <div>
+            <p>Hello {props.name}. Greetings from React.</p>
+            <p>
+                <input ref={userIdInput} type="number"
+                    placeholder="UserId (1 to 10) here" />
+            </p>
+            <p>
+                <button onClick={refetchData}>
+                    Fetch User
+                </button>
+            </p>
+            <p>
+                {showUser()}
+            </p>
+        </div>
+    )
 }
-
 HelloWorld7.defaultProps = {
-        name: "User"
+    name: "Ife"
 }
-
 export default HelloWorld7;
